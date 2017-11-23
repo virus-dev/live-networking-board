@@ -1,87 +1,83 @@
 input, textarea {
-  outline-style:none;
-  width: 100%;
-  background-color: #555555;
-  border: none;
-  height: 40px;
-  margin: 0;
-  padding: 0;
-  text-indent: 10px;
+    outline-style: none;
+    background-color: #555555;
+    border: none;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    text-indent: 10px;
+    width: 100%;
 }
 
 input[type=text] {
-  color: #aaaaaa;
+    color: #ffffff;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #aaaaaa;
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #666666;
 }
-::-moz-placeholder { /* Firefox 19+ */
-  color: #aaaaaa;
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #666666;
 }
-:-ms-input-placeholder { /* IE 10+ */
-  color: #aaaaaa;
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #666666;
 }
-:-moz-placeholder { /* Firefox 18- */
-  color: #aaaaaa;
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #666666;
 }
 
 table {
-  font-size: 12px;
-  width: 240px;
-  position: absolute;
-  left: 50%;
-  margin-left: -120px;
-  padding: 0;
+    font-size: 12px;
+    width: 360px;
+    padding: 0;
 }
 
-#table-login {
-  top: 30px;
+#table-main {
+    margin-top: 15px;
 }
 
-#table-login tr {
-  height: 40px;
+#table-main tr {
+    border-bottom: 1px solid #888888;
+
 }
 
-#table-login th {
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  margin: 0;
+#table-main th {
+    color: #ffffff;
+    background-color: #666666;
+    text-indent: 10px;
+    width: 120px;
+    height: 30px;
 }
 
-#table-login th img {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+#table-main td {
+    width: 240px;
+    height: 30px;
 }
 
-#table-login .tr-mainimage {
-  width: 240px;
-  height: 180px;
+#title_image {
+    width: 360px;
 }
 
-#table-login .tr-mainimage img{
-  width: 160px;
-  margin-left: 40px;
+#title_words {
+    color: white;
+    width: 360px;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 24px;
 }
 
-#table-invest {
-  top: 310px;
-}
-
-#table-invest th, #table-invest td, {
-  height: 30px;
-}
-
-#table-invest th {
-  color: #cccccc;
-  background-color: #666666;
-  text-indent: 10px;
-}
-
-.modal-body pre {
-  color: red;
-  text-align: left;
+.title {
+    width: 360px;
+    top: 120px;
+    /* center align */
+    left: 50%;
+    position: absolute;
+    margin-left: -180px; /* margin-left = - width / 2 */
 }
