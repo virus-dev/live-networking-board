@@ -13,19 +13,25 @@
                     $.get('/load', function(data) {
                         $("#user_board").empty();
 
+                        user_index = 1;
+
                         $(data).each(function(i) {
                             var id = this._id;
 
                             $("#user_board").prepend("<div class='item'></div>");
 
-                            $("#user_board .item:first").append("<div class='user_name'><b>" + this.user_name + " | " + this.user_position + "</b> (" + this.date +
-                                ")&nbsp;&nbsp; | <span class='text_button del'>DELETE</span></div>");
-                            $("#user_board .item:first").append("<div class='contents " + id + "'>" + this.user_invest1 + " | " + this.user_invest2 + " | " + this.user_invest3 + " | " + this.user_invest4 + " | " + this.user_invest5 + "</div>");
+                            $("#user_board .item:first").append("<hr/><div class='contents " + id + "'>" + user_index + "</div>");
+                            $("#user_board .item:first").append("<div class='user_name'><b>" + this.user_name + " | " + this.user_email + "</b> &nbsp;&nbsp;&nbsp;(" + this.date +
+                                ") | <span class='text_button del'>DELETE</span></div>");
+                            $("#user_board .item:first").append("<div class='contents " + id + "'>" + this.user_position + " | " + this.user_interest + "</div>");
+                            $("#user_board .item:first").append("<div class='contents " + id + "'>" + this.user_description + "</div>");
 
                             //삭제 버튼을 눌렀을 때에 대한 이벤트 콜백함수를 지정합니다.
                             $("#user_board .item:first .del").click(function(evt) {
                                 del(id);
                             });
+
+                            user_index = user_index + 1;
                         });
                     });
                 };

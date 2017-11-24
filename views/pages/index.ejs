@@ -12,9 +12,14 @@
         var write = function(contents) {
             var postdata = {
                 'user_name': $("#user_name").val(),
+                'user_position': $("#user_position").val(),
+                'user_interest': $("#user_interest").val(),
                 'user_email': $("#user_email").val(),
-                'user_intro': $("#user_intro").val()
+                'user_description': $("#user_description").val()
             };
+
+            $.post('/invest', postdata, function() {
+            });
         };
 
         $.get('/load', function(data) {

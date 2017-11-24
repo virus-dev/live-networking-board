@@ -6,12 +6,10 @@ var Schema = mongoose.Schema;
 //메모 모델을 정의합니다.
 var Invest = new Schema({
 	user_name: String,
-	user_phone: String,
-	user_invest1: Number,
-	user_invest2: Number,
-	user_invest3: Number,
-	user_invest4: Number,
-	user_invest5: Number,
+	user_position: String,
+	user_interest: String,
+	user_email: String,
+	user_description: String,
 	date: Date
 });
 
@@ -52,24 +50,20 @@ exports.login = function(req, res) {
 
 exports.invest = function(req, res) {
 	var user_name = req.body.user_name;
-	var user_phone = req.body.user_phone;
-	var user_invest1 = req.body.user_invest1;
-	var user_invest2 = req.body.user_invest2;
-	var user_invest3 = req.body.user_invest3;
-	var user_invest4 = req.body.user_invest4;
-	var user_invest5 = req.body.user_invest5;
+	var user_position = req.body.user_position;
+	var user_interest = req.body.user_interest;
+	var user_email = req.body.user_email;
+	var user_description = req.body.user_description;
 
 	var date = Date.now();
 
 	var invest = new investModel();
 
 	invest.user_name = user_name;
-	invest.user_phone = user_phone;
-	invest.user_invest1 = user_invest1;
-	invest.user_invest2 = user_invest2;
-	invest.user_invest3 = user_invest3;
-	invest.user_invest4 = user_invest4;
-	invest.user_invest5 = user_invest5;
+	invest.user_position = user_position;
+	invest.user_interest = user_interest;
+	invest.user_email = user_email;
+	invest.user_description = user_description;
 	invest.date = date;
 
 	invest.save(function (err) {
