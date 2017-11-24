@@ -1,5 +1,7 @@
 #mainpage-body {
-    background-image: linear-gradient(to right, #ea1adb 0%, #641bd8eb 100%)
+    background: linear-gradient(to right, #ea1adb, #641bd8eb);
+    background: -ms-linear-gradient(right, #ea1adb, #641bd8eb); /* IE 11 */
+    background: -webkit-linear-gradient(right, #ea1adb, #641bd8eb); /* For Safari 5.1 to 6.0 */
 }
 
 input, textarea {
