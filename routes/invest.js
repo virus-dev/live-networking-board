@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var db = mongoose.connect('mongodb://localhost/rst_invest');
+var db = mongoose.connect('mongodb://localhost/rst_networking');
 var Schema = mongoose.Schema;
 
 //메모 모델을 정의합니다.
