@@ -18,7 +18,7 @@
         };
 
         $.get('/load', function(data) {
-            $("#invest_button").click(function(evt) {
+            $("#user_submit").click(function(evt) {
                 write();
                 alert("투표 완료! " + $("#user_name").val() + " 님 감사합니다");
                 window.location.replace("/board");
@@ -27,7 +27,7 @@
     });
 </script>
 
-<body style="background-color: rgb(237, 60, 144)">
+<body id="mainpage-body">
     <header>
         <div class="header-content">
             <div id='main' class="header-content-inner title">
@@ -35,19 +35,19 @@
                 <p id="title_words">LIVE NETWORKING PROGRAM</p>
                 <hr style="margin: 0" />
                 <table id="table-main">
-                    <tr>
+                    <tr class="tr_border">
                         <th>이름(Name)</th>
                         <td><input id='user_name' type='text' placeholder='Hyunseok Moon' /></td>
                     </tr>
-                    <tr>
+                    <tr class="tr_border">
                         <th>신분(Position)</th>
                         <td><input id='user_position' type='text' placeholder='Startup' /></td>
                     </tr>
-                    <tr>
+                    <tr class="tr_border">
                         <th>관심 분야(Interest)</th>
                         <td><input id='user_interest' type='text' placeholder='Machine Learning' /></td>
                     </tr>
-                    <tr>
+                    <tr class="tr_border">
                         <th>이메일(E-mail)</th>
                         <td><input id='user_email' type='text' placeholder='hyunseok.moon@vi-rus.network' /></td>
                     </tr>
@@ -59,7 +59,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input id='invest_button' type='button' value='제출' style="background-color: #a7cb08" />
+                            <input id='user_submit' type='button' value='제출(Submit)' />
                         </td>
                     </tr>
                 </table>

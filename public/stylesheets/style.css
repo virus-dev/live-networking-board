@@ -1,3 +1,7 @@
+#mainpage-body {
+    background-color: rgb(237, 60, 144);
+}
+
 input, textarea {
     outline-style: none;
     background-color: #555555;
@@ -43,9 +47,8 @@ table {
     margin-top: 15px;
 }
 
-#table-main tr {
+.tr_border {
     border-bottom: 1px solid #888888;
-
 }
 
 #table-main th {
@@ -81,4 +84,8 @@ table {
     left: 50%;
     position: absolute;
     margin-left: -180px; /* margin-left = - width / 2 */
+}
+
+#user_submit {
+    background-color: red;
 }
