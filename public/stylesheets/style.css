@@ -115,3 +115,7 @@ table {
     border-bottom: 1px solid black;
     /*color: red;*/
 }
+
+#user_board .user_del {
+    color: red;
+}
