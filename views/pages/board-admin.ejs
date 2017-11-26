@@ -13,26 +13,32 @@
                     $.get('/load', function(data) {
                         $("#user_board").empty();
 
-                        user_index = 1;
+                        user_index = $(data).length;
 
-                        $(data).each(function(i) {
+                        $("#user_board").append("<tr class='board_title'><th>INDEX</th><th>NAME</th><th>EMAIL</th><th>POSITION</th><th>INTEREST</th><th>TIME</th></tr>")
+
+                        $($(data).get().reverse()).each(function(i) {
                             var id = this._id;
 
-                            $("#user_board").prepend("<div class='item'></div>");
+                            $("#user_board").append("<tr class='board_item " + id + "'></tr>");
 
-                            $("#user_board .item:first").append("<hr/><div class='contents " + id + "'>" + user_index + "</div>");
-                            $("#user_board .item:first").append("<div class='user_name'><b>" + this.user_name + " | " + this.user_email + "</b> &nbsp;&nbsp;&nbsp;(" + this.date +
-                                ") | <span class='text_button del'>DELETE</span></div>");
-                            $("#user_board .item:first").append("<div class='contents " + id + "'>" + this.user_position + " | " + this.user_interest + "</div>");
-                            $("#user_board .item:first").append("<div class='contents " + id + "'>" + this.user_description + "</div>");
+                            $("#user_board .board_item:last").append("<td rowspan='2' class='user_index board_sep'>" + user_index + "</td>");
+                            $("#user_board .board_item:last").append("<td class='user_name'>" + this.user_name + "</td>");
+                            $("#user_board .board_item:last").append("<td class='user_email'>" + this.user_email + "</td>");
+                            $("#user_board .board_item:last").append("<td class='user_position'>" + this.user_position + "</td>");
+                            $("#user_board .board_item:last").append("<td class='user_interest'>" + this.user_interest + "</td>");
+                            $("#user_board .board_item:last").append("<td class='user_del'>DELETE</td>");
+
+                            $("#user_board").append("<tr class='contents board_sep'><td colspan='4'>" + this.user_description + "</td><td class='user_time'>" + this.date + "</td></tr>");
 
                             //삭제 버튼을 눌렀을 때에 대한 이벤트 콜백함수를 지정합니다.
-                            $("#user_board .item:first .del").click(function(evt) {
+                            $("#user_board .board_item:last .user_del").click(function(evt) {
                                 del(id);
                             });
 
-                            user_index = user_index + 1;
+                            user_index = user_index - 1;
                         });
+
                     });
                 };
 
@@ -53,10 +59,8 @@
 </head>
 
 <body>
-    <div id='user_board'>
-        <div class='item'>
-        </div>
-    </div>
+    <table id='user_board'>
+    </table>
     <% include ../partials/body_script %>
 </body>
 
