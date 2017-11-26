@@ -93,3 +93,25 @@ table {
     color: white;
     background-color: rgba(255, 255, 255, .15);
 }
+
+/* for board.ejs */
+
+#user_board {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+}
+
+#user_board tr {
+    height: 40px;
+}
+
+#user_board tr:first-child {
+    border-bottom: 3px solid black;
+}
+
+#user_board .board_sep {
+    border-bottom: 1px solid black;
+    /*color: red;*/
+}
