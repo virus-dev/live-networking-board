@@ -4,7 +4,7 @@
     background: -webkit-linear-gradient(right, #ea1adb, #641bd8eb); /* For Safari 5.1 to 6.0 */
 }
 
-input, textarea {
+.title input, .title textarea {
     outline-style: none;
     background-color: #fff;
     border: none;
@@ -15,7 +15,7 @@ input, textarea {
     width: 100%;
 }
 
-input[type=text] {
+.title input[type=text] {
     color: #bf1dde;
 }
 
@@ -118,4 +118,11 @@ table {
 
 #user_board .user_del {
     color: red;
+}
+
+.user_board_key {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
 }

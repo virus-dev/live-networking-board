@@ -7,7 +7,17 @@
             var load = null;
             var del = null;
 
+            var ADMIN_PASSWORD = 'password';
+
             $(document).ready(function() {
+                $('#admin_submit').click(function(evt) {
+                    if ($('#admin_pw').val() == ADMIN_PASSWORD){
+                        load();
+                    } else{
+                        alert("WRONG PASSWORD!");
+                    }
+                });
+
                 //작성된 메모 목록을 로드합니다.
                 var load = function() {
                     $.get('/load', function(data) {
@@ -52,13 +62,15 @@
                         load();
                     });
                 };
-
-                load();
             });
         </script>
 </head>
 
 <body>
+    <div class="user_board_key">
+        <input id="admin_pw" type="text" value="">
+        <input id="admin_submit" type="submit" value="ENTER">
+    </div>
     <table id='user_board'>
     </table>
     <% include ../partials/body_script %>
