@@ -24,9 +24,13 @@
 
         $.get('/load', function(data) {
             $("#user_submit").click(function(evt) {
-                write();
-                alert("입력 완료! " + $("#user_name").val() + " 님 감사합니다");
-                window.location.replace("/board");
+                if ($("#user_name").val() == '' || $("#user_position").val() == '' || $("#user_interest").val() == '' || $("#user_email").val() == '' || $("#user_description").val() == '') {
+                    alert("빈 칸이 있습니다. 모든 정보를 다 채워주세요!\nPlease fill out all of the sections.");
+                } else {
+                    write();
+                    alert("입력 완료! " + $("#user_name").val() + " 님 감사합니다");
+                    window.location.replace("/board");
+                }
             });
         });
     });
