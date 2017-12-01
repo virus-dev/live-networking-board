@@ -15,14 +15,45 @@
 
                         user_index = $(data).length;
 
-                        $("#user_board").append("<tr class='board_title'><th>ID</th><th>NAME</th><th>EMAIL</th><th>POSITION</th><th>INTEREST</th></tr>")
+                        $("#user_board").append("<tr class='board_title'><th>ID</th><th>NAME</th><th>EMAIL</th><th>POSITION</th><th>INTEREST</th></tr>");
 
-                        $($(data).get().reverse()).each(function(i) {
+                        var data_id = [];
+
+                        $($(data).get()).each(function(i) {
+                            var id = this._id;
+                            data_id.push(id);
+                        });
+
+                        function shuffle(array) {
+                          var currentIndex = array.length, temporaryValue, randomIndex;
+
+                          // While there remain elements to shuffle...
+                          while (0 !== currentIndex) {
+
+                            // Pick a remaining element...
+                            randomIndex = Math.floor(Math.random() * currentIndex);
+                            currentIndex -= 1;
+
+                            // And swap it with the current element.
+                            temporaryValue = array[currentIndex];
+                            array[currentIndex] = array[randomIndex];
+                            array[randomIndex] = temporaryValue;
+                          }
+
+                          return array;
+                        }
+
+                        // Used like so
+                        rand_data = shuffle($(data).get());
+
+                        $(rand_data).each(function(i) {
+                            user_id_index = data_id.indexOf(this._id);
+
                             var id = this._id;
 
                             $("#user_board").append("<tr class='board_item'></tr>");
 
-                            $("#user_board .board_item:last").append("<td rowspan='2' class='user_index board_sep " + id + "'>" + user_index + "</td>");
+                            $("#user_board .board_item:last").append("<td rowspan='2' class='user_index board_sep " + id + "'>" + (user_id_index + 1) + "</td>");
                             $("#user_board .board_item:last").append("<td class='user_name'>" + this.user_name + "</td>");
                             $("#user_board .board_item:last").append("<td class='user_email'>" + this.user_email + "</td>");
                             $("#user_board .board_item:last").append("<td class='user_position'>" + this.user_position + "</td>");

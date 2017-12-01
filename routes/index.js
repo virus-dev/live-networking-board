@@ -6,9 +6,14 @@ router.get('/', function(req, res, next) {
   res.render('pages/index', { title: '바이러스 네트워킹 프로그램' });
 });
 
-/* make route to board-admin page */
+/* make route to board page */
 router.get('/board', function(req, res, next) {
   res.render('pages/board', { title: '바이러스 네트워킹 프로그램' });
+});
+
+/* make route to board-random page */
+router.get('/board-random', function(req, res, next) {
+  res.render('pages/board-random', { title: '바이러스 네트워킹 프로그램' });
 });
 
 /* make route to board-admin page */
