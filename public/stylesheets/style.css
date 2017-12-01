@@ -97,7 +97,7 @@ table {
     background-color: rgba(255, 255, 255, .15);
 }
 
-/* for board.ejs */
+/* for board.ejs & board-admin.ejs & board-random.ejs */
 
 #user_board {
     width: 90%;
@@ -128,4 +128,12 @@ table {
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 20px;
+}
+
+#user_board tr:nth-child(4n+2) {
+    background: #dddddd;
+}
+
+#user_board tr:nth-child(4n+3) {
+    background: #dddddd;
 }
