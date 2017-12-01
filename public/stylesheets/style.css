@@ -1,5 +1,5 @@
 #mainpage-body {
-    background: red;
+    background: #201544; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(left, #ea1adb, #641bd8eb); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(right, #ea1adb, #641bd8eb); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(right, #ea1adb, #641bd8eb); /* For Firefox 3.6 to 15 */
