@@ -2,6 +2,9 @@
 사용자들이 서로의 한 줄 소개를 확인할 수 있는, 네트워킹 행사를 위한 프로그램  
 Live networking board system for networking party based on node.js and mongodb
 
+## Live demo
+[Here!](http://lab.virus.network)
+
 ## Usage
 
 ### Settings
@@ -17,7 +20,7 @@ Live networking board system for networking party based on node.js and mongodb
 ```
 > to reset: ```$ killall -15 mongod```  
 
-### Always Run database
+### Always run database
 ```
 # mongod --fork --logpath mongod.log --dbpath ./live-networking-board/db-local
 ```
@@ -36,7 +39,7 @@ Live networking board system for networking party based on node.js and mongodb
 ```
 > Test url: ```localhost```
 
-### Always Run
+### Always run
 ```
 # forever --minUptime 5 --spinSleepTime 5 start /root/live-networking-board/bin/www
 ```
